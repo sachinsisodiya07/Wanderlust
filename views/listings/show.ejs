@@ -88,6 +88,33 @@
         <h3>Where you'll be</h3>
         <div id="map"></div>
     </div>
+<div class="row mt-3">
+        <hr />
+        <div class="col-8 offset-3 ">
+            <h3>Connect With US...</h3>
+            <!-- form fields -->
+            <form action="https://api.web3forms.com/submit" method="POST" name="redirect" value="https://localhost:8080/listings">
+                <input type="hidden" name="access_key" value="fb10f5d9-de09-4f39-b525-3540ec79fa11">
+                <div class="form-group">
+                    <input type="text" class="form-control " name="name" placeholder="Your Name"
+                        required>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="email" class="form-control " name="email"
+                        placeholder="Your Email" required>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control " name="phone"
+                        placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control " name="message" rows="4"
+                        placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark add-btn mt-3 mb-3">Send Message</button>
+            </form>
+    
+        </div>
 </div>
 
 <script src="/js/map.js"></script>
