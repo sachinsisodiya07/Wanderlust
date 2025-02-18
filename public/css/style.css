@@ -151,7 +151,7 @@ body {
     font-size: 3rem;
     color: #fe424d;
 }
-@media(max-width:700px){
+@media(max-width:800px){
     #map{
         height: 300px;
         width:300px;
