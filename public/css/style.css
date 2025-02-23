@@ -25,6 +25,22 @@ body {
     font-size: 2rem;
 }
 
+.nav-tog-bg{
+    background-color:#fff;
+    /* opacity:0.8; */
+  }
+
+  .nav-tog-bg:hover{
+    opacity:1;
+  }
+  .container-fluid{
+    padding: 0;
+  }
+
+  .navbar-nav{
+    padding:0 12px;
+  }
+
 /* footer */
 .f-info-links a {
     text-decoration: none;
