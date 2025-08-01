@@ -19,6 +19,7 @@ const userRouter = require("./routes/user.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const paymentRoutes = require('./routes/payment');
 
 const dbUrl = process.env.ATLASDB_URL;
 main()
@@ -83,6 +84,7 @@ app.use((req,res,next) => {
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
+app.use('/', paymentRoutes);
 app.get('/work_in_progress', (req, res) => {
   res.render('work_in_progress.ejs');
 });
