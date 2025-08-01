@@ -148,7 +148,7 @@
     const data = await response.json();
 
     const options = {
-      key: 'YOUR_RAZORPAY_KEY_ID',
+      key: 'process.env.PAYMENT_ID',
       amount: data.amount,
       currency: 'INR',
       name: 'Wanderlust Booking',
