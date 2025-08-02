@@ -33,17 +33,21 @@
    <% } %>
 
     <!-- Book Now Button -->
-<button class="btn btn-dark col-1 offset-3 edit-btn" onclick="showBookingForm()">Book Now</button>
+<button class="btn btn-dark add-btn" onclick="showBookingForm()">Book Now</button>
 
 <!-- Booking Form (Initially Hidden) -->
 <div id="bookingForm" style="display: none;">
   <h3>Booking Details</h3>
   <form id="bookingDetails">
-    <input type="text" name="name" placeholder="Full Name" required><br>
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="date" name="checkin" required><br>
-    <input type="date" name="checkout" required><br>
-    <button type="submit">Pay</button>
+    <label for="Full Name" class="form-label">Full Name</label>
+    <input type="text" name="Full Name" placeholder="Enter Full Name" class="form-control" required><br>
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" placeholder="Enter Email" class="form-control" required><br>
+    <label for="checkin" class="form-label">Checkin Date</label>
+    <input type="date" name="checkin" class="form-control" required><br>
+    <label for="checkout" class="form-label">Checkout Date</label>
+    <input type="date" name="checkout" class="form-control" required><br>
+    <button type="submit" class="btn btn-dark add-btn">Pay</button>
   </form>
 </div>
 
