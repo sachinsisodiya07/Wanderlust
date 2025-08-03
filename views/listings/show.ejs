@@ -154,7 +154,7 @@
     const data = await response.json();
 
     const options = {
-      key: "<%= process.env.PAYMENT_ID %>", // ✅ Corrected
+      key: "<%= process.env.PAYMENT_ID %>", 
       amount: data.amount,
       currency: 'INR',
       name: 'Wanderlust Booking',
