@@ -153,9 +153,8 @@
     const response = await fetch('/create-order', { method: 'POST' });
     const data = await response.json();
 
-    require('dotenv').config();
     const options = {
-      key: 'process.env.PAYMENT_ID',
+      key: "<%= process.env.PAYMENT_ID %>", // ✅ Corrected
       amount: data.amount,
       currency: 'INR',
       name: 'Wanderlust Booking',
@@ -165,7 +164,7 @@
         alert('✅ Payment Successful! Booking Confirmed.');
       },
       prefill: {
-        name: document.querySelector('[name="name"]').value,
+        name: document.querySelector('[name="Full Name"]').value,
         email: document.querySelector('[name="email"]').value,
       },
       theme: {
