@@ -34,25 +34,7 @@
 
     <!-- Book Now Button -->
 <br><br>
-<button onclick="showBookingForm()" class="btn btn-dark add-btn col-8 offset-3 mt-3">Book Now</button>
-
-<!-- Booking Form (Initially Hidden) -->
-<div class="col-8 offset-3" id="bookingForm" style="display: none;">
-  <h3>Booking Details</h3>
-  <br>
-  <form id="bookingDetails">
-    <label for="Full Name" class="form-label">Full Name</label>
-    <input type="text" name="Full Name" placeholder="Enter Full Name" class="form-control" required><br>
-    <label for="email" class="form-label">Email</label>
-    <input type="email" name="email" placeholder="Enter Email" class="form-control" required><br>
-    <label for="checkin" class="form-label">Checkin Date</label>
-    <input type="date" name="checkin" class="form-control" required><br>
-    <label for="checkout" class="form-label">Checkout Date</label>
-    <input type="date" name="checkout" class="form-control" required><br>
-    <button type="submit" class="btn btn-dark add-btn">Pay</button>
-  </form>
-</div>
-
+<button onclick="window.location.href='/work_in_progress';" class="btn btn-dark add-btn col-8 offset-3 mt-3">Book Now</button>
 
    <div class="col-8 offset-3">
         <% if(currUser) { %>
@@ -141,38 +123,3 @@
 
 <script src="/js/map.js"></script>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-  function showBookingForm() {
-    document.getElementById('bookingForm').style.display = 'block';
-  }
-
-  document.getElementById("bookingDetails").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const response = await fetch('/create-order', { method: 'POST' });
-    const data = await response.json();
-
-    const options = {
-      key: "<%= process.env.PAYMENT_ID %>", 
-      amount: data.amount,
-      currency: 'INR',
-      name: 'Wanderlust Booking',
-      description: 'Hotel Booking Payment',
-      order_id: data.orderId,
-      handler: function (response) {
-        alert('✅ Payment Successful! Booking Confirmed.');
-      },
-      prefill: {
-        name: document.querySelector('[name="Full Name"]').value,
-        email: document.querySelector('[name="email"]').value,
-      },
-      theme: {
-        color: "#ff385c"
-      }
-    };
-
-    const rzp = new Razorpay(options);
-    rzp.open();
-  });
-</script>
